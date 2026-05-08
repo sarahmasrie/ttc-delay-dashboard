@@ -1,3 +1,11 @@
+# TTC Subway Delay Data Cleaning Script
+
+# Author: Sarah Masrie
+# Date: May 2026
+# Description:
+# Cleans and transforms TTC subway delay data for Power BI analysis.
+# Creates datetime features and delay severity categories.
+
 import pandas as pd
 
 NO_DELAY_LIMIT = 0
