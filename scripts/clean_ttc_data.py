@@ -40,14 +40,17 @@ ttc_data["Weekday"] = ttc_data["DateTime"].dt.day_name()
 
 # Delay Categorization
 def categorize_delay(delay_minutes):
+
+    delay_category = "Severe"
+
     if delay_minutes == NO_DELAY_LIMIT:
-        return "No Delay"
+        delay_category = "No Delay"
     elif delay_minutes <= SMALL_DELAY_LIMIT:
-        return "Small"
+        delay_category = "Small"
     elif delay_minutes <= MEDIUM_DELAY_LIMIT:
-        return "Medium"
-    else:
-        return "Severe"
+        delay_category = "Medium"
+
+    return delay_category
 
 ttc_data["Delay Category"] = ttc_data["Min Delay"].apply(categorize_delay)
 
